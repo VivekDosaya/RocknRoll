@@ -20,12 +20,14 @@ class ViewController: UIViewController {
     func updateDiceImage(){
         dice1.image = UIImage(named: "dice\(Int.random(in: 1...6))")
         dice2.image = UIImage(named: "dice\(Int.random(in: 1...6))")
-        
     }
-
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        updateDiceImage()
+    }
     @IBAction func buttonPressed(_ sender: UIButton) {
         updateDiceImage()
     }
     
 }
+
 
